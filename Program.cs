@@ -5,8 +5,6 @@ using GraphQLAPI.IRepository;
 using GraphQLAPI.Models;
 using GraphQLAPI.Repository;
 
-using HotChocolate.AspNetCore;
-
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
