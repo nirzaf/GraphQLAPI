@@ -5,9 +5,9 @@ namespace GraphQLAPI;
 public class Query
 {
    //Fetch the list of superHeros objects
-   // [UseProjection]
-   // [UseFiltering]
-   // [UseSorting]
+   [UseProjection]
+   [HotChocolate.Data.UseFiltering]
+   [UseSorting]
    [GraphQLName("Superheros")]
    public IQueryable<Superhero> GetSuperheroes([Service] SuperHeroDbContext context) =>
       context.Superheroes;
