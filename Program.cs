@@ -1,6 +1,11 @@
+//using GraphQLAPI.Data;
+
+using GraphQLAPI;
 using GraphQLAPI.IRepository;
 using GraphQLAPI.Models;
 using GraphQLAPI.Repository;
+
+using HotChocolate.AspNetCore;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +25,10 @@ builder.Services.AddScoped<ISuperheroRepository, SuperheroRepository>();
 builder.Services.AddScoped<ISuperPowerRepository, SuperpowerRepository>();
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 
+builder.Services.AddGraphQLServer()
+    .AddQueryType<Query>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,5 +43,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapGraphQL();
 
 app.Run();

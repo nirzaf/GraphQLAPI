@@ -1,6 +1,12 @@
-﻿namespace GraphQLAPI.IRepository;
+﻿using GraphQLAPI.Models;
 
-public class ISuperheroRepository
+namespace GraphQLAPI.IRepository;
+
+public interface ISuperheroRepository
 {
+    Task<Superhero> AddSuperhero(Superhero superhero);
     
+    Task<Superhero?> GetSuperhero(Guid id);
+    
+    Task<List<Superhero>> GetSuperheroes();
 }
