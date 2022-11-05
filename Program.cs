@@ -1,5 +1,3 @@
-//using GraphQLAPI.Data;
-
 using GraphQLAPI;
 using GraphQLAPI.IRepository;
 using GraphQLAPI.Models;
