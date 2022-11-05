@@ -16,5 +16,6 @@ public class Movie
     
     [ForeignKey("SuperHeroId")]
     public Guid SuperheroId { get; set; }
+    
     public Superhero Superhero { get; set; }
 }

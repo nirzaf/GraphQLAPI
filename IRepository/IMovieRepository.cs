@@ -1,6 +1,6 @@
 ﻿namespace GraphQLAPI.IRepository;
 
-public class IMovieRepository
+public interface IMovieRepository
 {
     
 }

@@ -11,7 +11,7 @@ public class SuperHeroDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         //Generate three Guids and place them in an array
-        var ids = new Guid[] { Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid() };
+        var ids = new[] { Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid() };
 
         // Apply configuration for the three contexts in our application
         // This will create the demo data for our GraphQL endpoint.
