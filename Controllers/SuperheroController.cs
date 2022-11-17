@@ -19,7 +19,6 @@ public class SuperheroController : Controller
     public async Task<IActionResult> GetSuperheroes()
     {
         var superheroes = await _superheroRepo.GetSuperheroes();
-
         return Ok(superheroes);
     }
 
@@ -36,6 +35,17 @@ public class SuperheroController : Controller
     public async Task<IActionResult> AddSuperhero([FromBody] Superhero superhero)
     {
         await _superheroRepo.AddSuperhero(superhero);
+        return Ok();
+    }
+    
+    [HttpPut]
+    [Route("api/superheroes")]
+    public async Task<IActionResult> UpdateSuperhero([FromBody] Superhero superhero)
+    {
+        var superHero = await _superheroRepo.UpdateSuperhero(superhero);
+        
+        
+        await _superheroRepo.UpdateSuperhero(superhero);
         return Ok();
     }
 }

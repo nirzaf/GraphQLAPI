@@ -32,4 +32,24 @@ public class SuperheroRepository : ISuperheroRepository
         var superheroes = await _dbContext.Superheroes.ToListAsync();
         return superheroes;
     }
+
+    public async Task<Superhero> UpdateSuperhero(Superhero superhero)
+    {
+        var superheroToUpdate = _dbContext.Superheroes.FirstOrDefault(x => x.Id == superhero.Id);
+        if (superheroToUpdate is not null)
+        {
+            superheroToUpdate.Name = superhero.Name;
+            superheroToUpdate.Description = superhero.Description;
+            superheroToUpdate.Height = superhero.Height;
+
+            // check if entity is modified
+            if (_dbContext.Entry(superheroToUpdate).State == EntityState.Modified)
+            {
+                await _dbContext.SaveChangesAsync();
+            }
+            return  superheroToUpdate;
+        }
+
+        return superhero;
+    }
 }

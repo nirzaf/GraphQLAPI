@@ -13,7 +13,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<SuperHeroDbContext>(options =>
+builder.Services.AddDbContextFactory<SuperHeroDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Register custom services for the superheroes
@@ -23,10 +23,12 @@ builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 
 builder.Services.AddGraphQLServer()
     .AddQueryType<Query>()
+    .AddMutationType<Mutation>()
     .AddProjections()
     .AddFiltering()
     .AddSorting();
 
+// UseDbContext -> UsePaging -> UseProjection -> UseFiltering -> UseSorting.
 
 var app = builder.Build();
 

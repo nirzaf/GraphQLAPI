@@ -23,6 +23,29 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="Throw" Version="1.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="TestGqlApi\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="TestGqlApi\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="TestGqlApi\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="TestGqlApi\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="TestGqlApi\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="TestGqlApi\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="TestGqlApi\obj\TestGqlApi.csproj.nuget.dgspec.json" />
     </ItemGroup>
 
 </Project>
