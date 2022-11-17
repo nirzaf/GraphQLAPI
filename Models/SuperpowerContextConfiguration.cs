@@ -20,50 +20,43 @@ public class SuperpowerContextConfiguration : IEntityTypeConfiguration<Superpowe
                 {
                     Id = Guid.NewGuid(),
                     SuperPower = "Intellect.",
-                    Description = "He's always a step ahead.",
-                    SuperheroId = _ids[0]
+                    Description = "He's always a step ahead."
                 },
                 new Superpower
                 {
                     Id = Guid.NewGuid(),
                     SuperPower = "Fighting",
-                    Description = "Sublime fighting skills.",
-                    SuperheroId = _ids[0]
+                    Description = "Sublime fighting skills."
                 },
                 new Superpower
                 {
                     Id = Guid.NewGuid(),
                     SuperPower = "Wealth.",
-                    Description = "He got a lot of money",
-                    SuperheroId = _ids[0]
+                    Description = "He got a lot of money"
                 },
                 new Superpower
                 {
                     Id = Guid.NewGuid(),
                     SuperPower = "Deflect blaster power.",
-                    Description = "Skywalker is able to deflect fire from a blaster back at the opponent firing. This enables Luke to turn someone else's weapon against them.",
-                    SuperheroId = _ids[1]
+                    Description = "Skywalker is able to deflect fire from a blaster back at the opponent firing. This enables Luke to turn someone else's weapon against them."
                 },
                 new Superpower
                 {
                     Id = Guid.NewGuid(),
                     SuperPower = "Espionage",
-                    Description = "She's good at spying at people.",
-                    SuperheroId = _ids[2]
+                    Description = "She's good at spying at people."
                 },
                 new Superpower
                 {
                     Id = Guid.NewGuid(),
                     SuperPower = "Infiltration",
-                    Description = "She knows how to infiltrate the enemy.",
-                    SuperheroId = _ids[2]
+                    Description = "She knows how to infiltrate the enemy."
                 },
                 new Superpower
                 {
                     Id = Guid.NewGuid(),
                     SuperPower = "Subterfuge",
-                    Description = "The knowledge of how to undermine others.",
-                    SuperheroId = _ids[2]
+                    Description = "The knowledge of how to undermine others."
                 });
         }
 }
