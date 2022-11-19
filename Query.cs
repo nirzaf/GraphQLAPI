@@ -24,4 +24,10 @@ public class Query
    [GraphQLName("SuperherosBySuperpowerId")]
    public IQueryable<Superhero> GetSuperheroesBySuperpowerId(Guid superpowerId) =>
       _context.Superheroes.Where(x => x.Id == superpowerId);
+
+   [GraphQLName("GetMovieById")]
+   public async Task<Movie> GetMovieById(Guid id)
+   {
+      return await _context.Movies.FindAsync(id);
+   }
 }

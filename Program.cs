@@ -20,8 +20,10 @@ builder.Services.AddDbContextFactory<SuperHeroDbContext>(options =>
 builder.Services.AddScoped<ISuperheroRepository, SuperheroRepository>();
 builder.Services.AddScoped<ISuperPowerRepository, SuperpowerRepository>();
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<Query>();
 
 builder.Services.AddGraphQLServer()
+    .AddDefaultTransactionScopeHandler()
     .AddQueryType<Query>()
     .AddMutationType<Mutation>()
     .AddProjections()
